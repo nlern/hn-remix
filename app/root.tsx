@@ -1,15 +1,24 @@
 import {
   Links,
+  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
 
+import Header from "./components/Header";
+
+import stylesUrl from "~/styles/global.css";
+
+export const links: LinksFunction = () => {
+  return [{ href: stylesUrl, rel: "stylesheet" }];
+};
+
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "Remix Hacker News" };
 };
 
 export default function App() {
@@ -22,6 +31,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

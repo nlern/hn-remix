@@ -1,9 +1,8 @@
 import { LoaderFunction, redirect } from "remix";
 
 export const loader: LoaderFunction = () => {
-  return redirect("/top");
+  return redirect("/top/1");
 };
-
-export default function Index() {
-  return <div></div>;
+export default function TopIndex() {
+  return <></>;
 }
