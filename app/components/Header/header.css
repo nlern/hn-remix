@@ -1,0 +1,28 @@
+header a {
+  color: inherit;
+  text-decoration: none;
+  padding: 1em 0.5em;
+  display: block;
+  font-weight: 500;
+}
+
+header .navbar {
+  padding: 0rem 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+header .navbar .navbar-links .navbar-link-item .link.active {
+  display: inline-block;
+  position: relative;
+}
+
+header .navbar .navbar-links .navbar-link-item .link.active:after {
+  position: absolute;
+  content: "";
+  width: calc(100% - 1em);
+  height: 2px;
+  background-color: #445566;
+  display: block;
+  bottom: 0;
+}

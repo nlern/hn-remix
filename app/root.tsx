@@ -10,12 +10,14 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 
 import stylesUrl from "~/styles/global.css";
 
+import { links as headerLinks } from "~/components/Header/Header";
+
 export const links: LinksFunction = () => {
-  return [{ href: stylesUrl, rel: "stylesheet" }];
+  return [{ href: stylesUrl, rel: "stylesheet" }, ...headerLinks()];
 };
 
 export const meta: MetaFunction = () => {
@@ -33,8 +35,8 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Header />
         {transition.state === "loading" ? "Loading ..." : null}
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
