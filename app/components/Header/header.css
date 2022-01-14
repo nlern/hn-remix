@@ -22,7 +22,7 @@ header .navbar .navbar-links .navbar-link-item .link.active:after {
   content: "";
   width: calc(100% - 1em);
   height: 2px;
-  background-color: #445566;
+  background-color: #ff6600;
   display: block;
   bottom: 0;
 }
