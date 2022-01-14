@@ -11,7 +11,7 @@ export default function Article({ article }: ArticlePropsType) {
       <div className="sequence-number">{article.sequenceNumber}</div>
       <div className="content">
         <div className="title">
-          <a href={article.url} target="_blank" referrerPolicy="no-referrer">
+          <a href={article.url}>
             {article.title} ({article.domain})
           </a>
         </div>
