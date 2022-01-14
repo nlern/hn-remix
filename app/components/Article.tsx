@@ -16,12 +16,21 @@ export default function Article({ article }: ArticlePropsType) {
           </a>
         </div>
         <div className="subtitle">
-          {article.points} by{" "}
-          <Link to={`/user/${article.user}`}>{article.user}</Link>{" "}
-          {article.time_ago} |{" "}
-          <Link to={`/item/${article.id}`}>
-            {article.comments_count} comments
-          </Link>
+          {article.user && (
+            <>
+              {article.points} by{" "}
+              <Link to={`/user/${article.user}`}>{article.user}</Link>{" "}
+            </>
+          )}
+          {article.time_ago}
+          {article.user && (
+            <>
+              |{" "}
+              <Link to={`/item/${article.id}`}>
+                {article.comments_count} comments
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </article>
