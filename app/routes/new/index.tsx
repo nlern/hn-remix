@@ -1,5 +1,5 @@
 import { LoaderFunction, redirect } from "remix";
 
 export const loader: LoaderFunction = () => {
-  return redirect("/news");
+  return redirect("/new/1");
 };

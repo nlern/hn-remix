@@ -3,9 +3,9 @@ import { Link } from "remix";
 export default function Header() {
   const links = [
     {
-      id: "top",
-      to: "/top",
-      label: "top",
+      id: "news",
+      to: "/news",
+      label: "news",
     },
     {
       id: "new",
