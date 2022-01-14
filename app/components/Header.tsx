@@ -1,43 +1,26 @@
-import { Link } from "remix";
+import { Link, useLocation } from "remix";
+import { navLinks } from "~/constants";
 
 export default function Header() {
-  const links = [
-    {
-      id: "news",
-      to: "/news",
-      label: "news",
-    },
-    {
-      id: "new",
-      to: "/new",
-      label: "new",
-    },
-    {
-      id: "show",
-      to: "/show",
-      label: "show",
-    },
-    {
-      id: "ask",
-      to: "/ask",
-      label: "ask",
-    },
-    {
-      id: "jobs",
-      to: "/jobs",
-      label: "jobs",
-    },
-  ];
+  const { pathname } = useLocation();
   return (
     <header>
       <div className="logo"></div>
-      <nav>
-        <ul>
-          {links.map((link) => (
-            <li key={link.id}>
-              <Link to={link.to}>{link.label}</Link>
-            </li>
-          ))}
+      <nav className="navbar">
+        <ul className="navbar-links">
+          {navLinks.map((link) => {
+            const isCurrentRoute = pathname.startsWith(link.to);
+            return (
+              <li
+                key={link.id}
+                className={`navbar-link-item ${isCurrentRoute ? "active" : ""}`}
+              >
+                <Link to={link.to} className="link">
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>

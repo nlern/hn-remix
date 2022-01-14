@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useTransition,
 } from "remix";
 import type { MetaFunction } from "remix";
 
@@ -22,6 +23,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
+  const transition = useTransition();
   return (
     <html lang="en">
       <head>
@@ -32,6 +34,7 @@ export default function App() {
       </head>
       <body>
         <Header />
+        {transition.state === "loading" ? "Loading ..." : null}
         <Outlet />
         <ScrollRestoration />
         <Scripts />

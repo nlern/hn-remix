@@ -14,24 +14,12 @@ export const loader: LoaderFunction = async ({ params }) => {
   const pageNumber = parseInt(params.pageNumber || "1");
   const res = await fetch(`https://api.hnpwa.com/v0/show/${pageNumber}.json`);
   const results = (await res.json()) as ArticleResponseType[];
-  const resultsView = results.map(
-    (
-      { id, url, title, domain, points, user, time_ago, comments_count },
-      index
-    ) => {
-      return {
-        id,
-        url,
-        title,
-        domain,
-        points,
-        user,
-        time_ago,
-        comments_count,
-        sequenceNumber: (pageNumber - 1) * 30 + index + 1,
-      } as ArticleType;
-    }
-  );
+  const resultsView = results.map((article, index) => {
+    return {
+      ...article,
+      sequenceNumber: (pageNumber - 1) * 30 + index + 1,
+    } as ArticleType;
+  });
   return { results: resultsView, pageNumber } as LoaderData;
 };
 

@@ -11,9 +11,13 @@ export default function Article({ article }: ArticlePropsType) {
       <div className="sequence-number">{article.sequenceNumber}</div>
       <div className="content">
         <div className="title">
-          <a href={article.url}>
-            {article.title} ({article.domain})
-          </a>
+          {article.type === "link" ? (
+            <a href={article.url}>
+              {article.title}({article.domain})
+            </a>
+          ) : (
+            <Link to={`./${article.type}/${article.url}`}>{article.title}</Link>
+          )}
         </div>
         <div className="subtitle">
           {article.user && (
