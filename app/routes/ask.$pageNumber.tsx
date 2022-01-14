@@ -41,7 +41,7 @@ export default function AskParamRoute() {
     <section>
       <ArticleList articles={data.results} />
       <div className="more">
-        <Link to={`/new/${data.pageNumber + 1}`}>More...</Link>
+        <Link to={`/ask/${data.pageNumber + 1}`}>More...</Link>
       </div>
     </section>
   );
