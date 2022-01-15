@@ -11,18 +11,18 @@ import {
 import type { MetaFunction } from "remix";
 
 import Header from "~/components/Header/Header";
-import ProgressIndicator from "~/components/ProgressIndicator/ProgressIndicator";
+import Loader from "~/components/Loader/Loader";
 
 import stylesUrl from "~/styles/global.css";
 
 import { links as headerLinks } from "~/components/Header/Header";
-import { links as progressIndicatorLinks } from "~/components/ProgressIndicator/ProgressIndicator";
+import { links as loaderLinks } from "~/components/Loader/Loader";
 
 export const links: LinksFunction = () => {
   return [
     { href: stylesUrl, rel: "stylesheet" },
     ...headerLinks(),
-    ...progressIndicatorLinks(),
+    ...loaderLinks(),
   ];
 };
 
@@ -41,7 +41,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        {transition.state === "loading" && <ProgressIndicator />}
+        {transition.state === "loading" && <Loader />}
         <Header />
         <Outlet />
         <ScrollRestoration />
