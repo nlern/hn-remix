@@ -1,14 +1,17 @@
-import type { ArticleType } from "~/types";
+import type { ArticleResponseType } from "~/types";
 import Article from "./Article/Article";
 
 export type ArticleListPropsType = {
-  articles: ArticleType[];
+  articles: ArticleResponseType[];
+  start: number;
 };
-export default function ArticleList({ articles }: ArticleListPropsType) {
+export default function ArticleList({ articles, start }: ArticleListPropsType) {
   return (
     <>
-      {articles.map((article) => {
-        return <Article key={article.id} article={article} />;
+      {articles.map((article, index) => {
+        return (
+          <Article key={article.id} article={article} index={start + index} />
+        );
       })}
     </>
   );

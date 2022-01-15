@@ -11,21 +11,22 @@ export const links: LinksFunction = () => {
 
 export default function Header() {
   return (
-    <header>
-      <nav className="navbar">
-        <div className="logo">
-          <NavLink to="/">HN Clone</NavLink>
-        </div>
-        <ul className="navbar-links">
-          {navLinks.map((link) => (
-            <li key={link.id} className="navbar-link-item">
-              <NavLink prefetch="intent" to={link.to} className="link">
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+    <nav>
+      <img alt="Svelte Hacker News logo" className="icon" src="/favicon.ico" />
+
+      <ul>
+        {navLinks.map((link) => (
+          <li key={link.id}>
+            <NavLink prefetch="intent" to={`${link.to}/1`}>
+              {link.label}
+            </NavLink>
+          </li>
+        ))}
+
+        <li className="about">
+          <NavLink to="/about">about</NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }

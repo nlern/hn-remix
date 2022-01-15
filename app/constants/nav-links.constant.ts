@@ -1,8 +1,8 @@
 export const navLinks = [
   {
-    id: "news",
-    to: "/news",
-    label: "news",
+    id: "top",
+    to: "/top",
+    label: "top",
   },
   {
     id: "new",

@@ -1,64 +1,68 @@
-/*
-    Josh's Custom CSS Reset
-    https://www.joshwcomeau.com/css/global-styles/
-  */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html {
+  --bg: white;
+  --fg: #333;
+  --fg-light: #666;
 }
 
-* {
-  margin: 0;
-  line-height: 1.5;
-  line-height: calc(1em + 0.625rem);
-  -webkit-font-smoothing: antialiased;
+html.dark {
+  --bg: #333;
+  --fg: #eee;
+  --fg-light: #aaa;
 }
 
-html,
 body {
-  height: 100%;
+  margin: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: var(--bg);
+  color: var(--fg);
+  transition: background-color 0.6s;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  margin: 0 0 0.5em 0;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-ul {
-  padding: 0;
+h1 {
+  font-size: 2em;
 }
 
-body {
-  font-family: Robot, sans-serif;
+a {
+  color: inherit;
 }
 
-.wrapper {
-  padding: 2rem 0;
-  max-width: 800px;
+code {
+  font-family: menlo, inconsolata, monospace;
+  font-size: calc(1em - 3px);
+}
+
+@media (min-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+main {
+  position: relative;
+  max-width: 56em;
+  padding: 2em;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .comment pre {

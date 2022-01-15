@@ -21,16 +21,6 @@ import { links as articleLinks } from "~/components/Article/Article";
 
 export const links: LinksFunction = () => {
   return [
-    { href: "https://fonts.googleapis.com", rel: "preconnect" },
-    {
-      href: "https://fonts.gstatic.com",
-      rel: "preconnect",
-      crossOrigin: "anonymous",
-    },
-    {
-      href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap",
-      rel: "stylesheet",
-    },
     { href: stylesUrl, rel: "stylesheet" },
     ...headerLinks(),
     ...loaderLinks(),
@@ -44,20 +34,22 @@ export const meta: MetaFunction = () => {
 
 export default function App() {
   const transition = useTransition();
+
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="theme-color" content="#333333" />
         <Meta />
         <Links />
       </head>
       <body>
         {transition.state === "loading" && <Loader />}
         <Header />
-        <div className="wrapper">
+        <main>
           <Outlet />
-        </div>
+        </main>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
