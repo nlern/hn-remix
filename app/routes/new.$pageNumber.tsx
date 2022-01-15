@@ -1,9 +1,10 @@
 import { Link, useLoaderData } from "remix";
-import type { LoaderFunction } from "remix";
+import type { LoaderFunction, MetaFunction } from "remix";
 
 import type { ArticleResponseType, ArticleType } from "~/types";
 
 import ArticleList from "~/components/ArticleList";
+import { AppTitle } from "~/constants";
 
 type LoaderData = {
   results: ArticleType[];
@@ -21,6 +22,12 @@ export const loader: LoaderFunction = async ({ params }) => {
     } as ArticleType;
   });
   return { results: resultsView, pageNumber } as LoaderData;
+};
+
+export const meta: MetaFunction = () => {
+  return {
+    title: `new - ${AppTitle}`,
+  };
 };
 
 export default function NewParamRoute() {

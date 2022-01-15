@@ -17,7 +17,7 @@ export default function Article({ article }: ArticlePropsType) {
       <div className="sequence-number">{article.sequenceNumber}</div>
       <div className="content">
         <div className="header">
-          {article.type === "link" ? (
+          {article.type === "link" || article.type === "job" ? (
             <>
               <a href={article.url} className="link title">
                 {article.title}
