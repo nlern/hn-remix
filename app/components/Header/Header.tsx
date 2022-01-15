@@ -19,7 +19,7 @@ export default function Header() {
         <ul className="navbar-links">
           {navLinks.map((link) => (
             <li key={link.id} className="navbar-link-item">
-              <NavLink to={link.to} className="link">
+              <NavLink prefetch="intent" to={link.to} className="link">
                 {link.label}
               </NavLink>
             </li>

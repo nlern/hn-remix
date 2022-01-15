@@ -34,6 +34,7 @@ export default function Article({ article }: ArticlePropsType) {
             </>
           ) : (
             <Link
+              prefetch="intent"
               to={`./${article.type}/${article.url}`}
               className="link title"
             >
@@ -49,7 +50,7 @@ export default function Article({ article }: ArticlePropsType) {
             </>
           )}
           {article.time_ago}
-          {article.user && (
+          {article.comments_count > 0 && (
             <>
               {" "}
               |{" "}

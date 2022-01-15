@@ -1,7 +1,7 @@
 import { redirect, useLoaderData } from "remix";
 import type { LoaderFunction } from "remix";
-import type { UserResponseType } from "~/types/user.type";
-import UserDetailsView from "~/components/UserDetailsView/UserDetailsView";
+import type { UserResponseType } from "~/types";
+import UserDetails from "~/components/UserDetails";
 
 type LoaderData = {
   user: UserResponseType;
@@ -19,5 +19,5 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function UserRoute() {
   const { user } = useLoaderData<LoaderData>();
-  return <UserDetailsView user={user} />;
+  return <UserDetails user={user} />;
 }

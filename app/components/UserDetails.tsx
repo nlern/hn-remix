@@ -1,9 +1,9 @@
 import type { UserResponseType } from "~/types/user.type";
 
-type UserDetailsViewProps = {
+type UserDetailsProps = {
   user: UserResponseType;
 };
-export default function UserDetailsView({ user }: UserDetailsViewProps) {
+export default function UserDetails({ user }: UserDetailsProps) {
   const hackerNewsUrl = "https://news.ycombinator.com/";
   return (
     <div className="user-details">
