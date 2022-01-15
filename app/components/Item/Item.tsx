@@ -12,19 +12,27 @@ export default function Item({ item }: ItemProps) {
   });
   return (
     <div className="item">
-      <h1 className="header">{item.title}</h1>
-      <small className="subheader">
-        <a href={item.url} className="link">
-          {item.domain}
-        </a>
-      </small>
-      <p className="info">
-        {item.points} by{" "}
-        <Link to={`/user/${item.user}`} prefetch="intent">
-          {item.user}
-        </Link>{" "}
-        {item.time_ago}
-      </p>
+      <div
+        className="top-matter"
+        style={{
+          borderBottom: "1em solid rgba(0,0,0,0.1)",
+          paddingBottom: "0.5rem",
+        }}
+      >
+        <h1 className="header">{item.title}</h1>
+        <small className="subheader">
+          <a href={item.url} className="link">
+            {item.domain}
+          </a>
+        </small>
+        <p className="info">
+          {item.points} by{" "}
+          <Link to={`/user/${item.user}`} prefetch="intent">
+            {item.user}
+          </Link>{" "}
+          {item.time_ago}
+        </p>
+      </div>
       <div className="comments">{comments}</div>
     </div>
   );
