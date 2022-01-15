@@ -43,7 +43,9 @@ export default function App() {
       <body>
         {transition.state === "loading" && <Loader />}
         <Header />
-        <Outlet />
+        <div className="wrapper">
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
