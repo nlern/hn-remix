@@ -1,9 +1,8 @@
 import { json, Link, useLoaderData } from "remix";
-import type { LoaderFunction, MetaFunction } from "remix";
-
+import type { LoaderFunction, LinksFunction, MetaFunction } from "remix";
 import type { ArticleResponseType } from "~/types";
-
 import ArticleList from "~/components/ArticleList";
+import { links as articleLinks } from "~/components/Article/Article";
 import { AppTitle } from "~/constants";
 
 type LoaderData = {
@@ -38,6 +37,10 @@ export const meta: MetaFunction = ({ data }) => {
     title: AppTitle,
     description: `Latest Hacker News stories in the ${data.list} category`,
   };
+};
+
+export const links: LinksFunction = () => {
+  return [...articleLinks()];
 };
 
 export default function ListPageRoute() {

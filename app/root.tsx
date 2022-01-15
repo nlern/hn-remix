@@ -19,7 +19,6 @@ import stylesUrl from "~/styles/global.css";
 import { links as headerLinks } from "~/components/Header/Header";
 import { links as loaderLinks } from "~/components/Loader/Loader";
 import { links as themeTogglerLinks } from "~/components/ThemeToggler/ThemeToggler";
-import { links as articleLinks } from "~/components/Article/Article";
 
 export const links: LinksFunction = () => {
   return [
@@ -27,7 +26,6 @@ export const links: LinksFunction = () => {
     ...headerLinks(),
     ...loaderLinks(),
     ...themeTogglerLinks(),
-    ...articleLinks(),
   ];
 };
 

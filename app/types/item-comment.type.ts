@@ -15,4 +15,5 @@ export type Comment = {
   level: number;
   url: string;
   comments: Comment[];
+  deleted: boolean;
 };

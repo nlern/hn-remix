@@ -1,6 +1,7 @@
 import { redirect, useLoaderData } from "remix";
-import type { LoaderFunction, MetaFunction } from "remix";
-import Item from "~/components/Item/Item";
+import type { LinksFunction, LoaderFunction, MetaFunction } from "remix";
+import Item, { links as itemLinks } from "~/components/Item/Item";
+import { links as commentLinks } from "~/components/Comment/Comment";
 import type { Item as ItemType } from "~/types";
 import { AppTitle } from "~/constants";
 
@@ -20,6 +21,10 @@ export const meta: MetaFunction = ({ data }: { data: ItemRouteLoaderData }) => {
   return {
     title: `${data.item.title} - ${AppTitle}`,
   };
+};
+
+export const links: LinksFunction = () => {
+  return [...itemLinks(), ...commentLinks()];
 };
 
 export default function ItemRoute() {

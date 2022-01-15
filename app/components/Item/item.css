@@ -1,0 +1,27 @@
+.item h1 {
+  font-weight: 500;
+}
+.item {
+  border-bottom: 1em solid rgba(0, 0, 0, 0.1);
+  margin: 0 -2em 2em -2em;
+  padding: 0 2em 2em 2em;
+}
+html.dark .item {
+  border-bottom: 1em solid rgba(255, 255, 255, 0.1);
+}
+.item .main-link {
+  display: block;
+  text-decoration: none;
+}
+.item small {
+  display: block;
+  font-size: 14px;
+}
+.item .meta {
+  font-size: 0.8em;
+  font-weight: 300;
+  color: var(--fg-light);
+}
+.item .comments > :global(.comment):first-child {
+  border-top: none;
+}

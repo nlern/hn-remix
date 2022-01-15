@@ -1,0 +1,46 @@
+.comment {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+html.dark .comment {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.comment .meta-bar {
+  padding: 1em 0;
+  cursor: pointer;
+  background: 100% 50% no-repeat url(/assets/icons/fold.svg);
+  background-size: 1em 1em;
+}
+.comment .hidden.meta-bar {
+  background-image: url(/assets/icons/unfold.svg);
+}
+.comment .children {
+  padding: 0 0 0 1em;
+  margin: 0;
+}
+.comment .hidden .body,
+.comment .hidden .children {
+  display: none;
+}
+@media (min-width: 720px) {
+  .comment .children {
+    padding: 0 0 0 2em;
+  }
+}
+.comment li {
+  list-style: none;
+}
+.comment .meta {
+  display: block;
+  font-size: 14px;
+  color: var(--fg-light);
+}
+.comment a {
+  color: var(--fg-light);
+}
+/* prevent crazy overflow layout bug on mobile */
+.comment .body :global(*) {
+  overflow-wrap: break-word;
+}
+.comment :global(pre) {
+  overflow-x: auto;
+}
