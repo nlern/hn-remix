@@ -12,11 +12,13 @@ import type { MetaFunction } from "remix";
 
 import Header from "~/components/Header/Header";
 import Loader from "~/components/Loader/Loader";
+import ThemeToggler from "~/components/ThemeToggler/ThemeToggler";
 
 import stylesUrl from "~/styles/global.css";
 
 import { links as headerLinks } from "~/components/Header/Header";
 import { links as loaderLinks } from "~/components/Loader/Loader";
+import { links as themeTogglerLinks } from "~/components/ThemeToggler/ThemeToggler";
 import { links as articleLinks } from "~/components/Article/Article";
 
 export const links: LinksFunction = () => {
@@ -24,6 +26,7 @@ export const links: LinksFunction = () => {
     { href: stylesUrl, rel: "stylesheet" },
     ...headerLinks(),
     ...loaderLinks(),
+    ...themeTogglerLinks(),
     ...articleLinks(),
   ];
 };
@@ -50,6 +53,7 @@ export default function App() {
         <main>
           <Outlet />
         </main>
+        <ThemeToggler />
         <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
