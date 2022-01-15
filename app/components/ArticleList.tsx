@@ -1,5 +1,5 @@
 import type { ArticleType } from "~/types";
-import Article from "./Article";
+import Article from "./Article/Article";
 
 export type ArticleListPropsType = {
   articles: ArticleType[];

@@ -51,7 +51,12 @@ ul {
   padding: 0;
 }
 
+body {
+  font-family: Robot, sans-serif;
+}
+
 .wrapper {
+  padding: 2rem 0;
   max-width: 800px;
   margin: 0 auto;
 }

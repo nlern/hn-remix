@@ -17,12 +17,24 @@ import stylesUrl from "~/styles/global.css";
 
 import { links as headerLinks } from "~/components/Header/Header";
 import { links as loaderLinks } from "~/components/Loader/Loader";
+import { links as articleLinks } from "~/components/Article/Article";
 
 export const links: LinksFunction = () => {
   return [
+    { href: "https://fonts.googleapis.com", rel: "preconnect" },
+    {
+      href: "https://fonts.gstatic.com",
+      rel: "preconnect",
+      crossOrigin: "anonymous",
+    },
+    {
+      href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap",
+      rel: "stylesheet",
+    },
     { href: stylesUrl, rel: "stylesheet" },
     ...headerLinks(),
     ...loaderLinks(),
+    ...articleLinks(),
   ];
 };
 

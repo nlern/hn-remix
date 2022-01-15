@@ -34,6 +34,7 @@ header .navbar {
 header .navbar .navbar-links .navbar-link-item .link.active {
   display: inline-block;
   position: relative;
+  font-weight: 600;
 }
 
 header .navbar .navbar-links .navbar-link-item .link.active:after {

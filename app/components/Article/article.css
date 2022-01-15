@@ -1,0 +1,34 @@
+.article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.article .sequence-number {
+  padding: 1rem;
+  font-size: 1.5rem;
+  min-width: 4rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.article .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.article .content .header .link {
+  vertical-align: middle;
+}
+
+.article .content .header .title {
+  font-weight: 600;
+  text-decoration: none;
+  color: #2c2c51;
+  margin-right: 0.5rem;
+}
+
+.article .content .subheader {
+  font-size: 0.85rem;
+}
